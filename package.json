@@ -2,7 +2,12 @@
   "author": "Jake Luer <jake@alogicalpardox.com> (http://alogicalparadox.com)",
   "name": "flynn",
   "description": "Node process management.",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/logicalparadox/flynn.git"
+  },
+  "bugs": "https://github.com/logicalparadox/flynn/issues",
   "main": "./index",
   "scripts": {
     "test": "make test"
