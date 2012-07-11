@@ -12,10 +12,7 @@
   "scripts": {
     "test": "make test"
   },
-  "dependencies": {
-      "drip": "0.3.x"
-    , "fsagent": "0.3.x"
-  },
+  "dependencies": {},
   "devDependencies": {
       "chai": "*"
     , "mocha": "*"
