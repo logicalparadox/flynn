@@ -1,0 +1,22 @@
+{
+  "author": "Jake Luer <jake@alogicalpardox.com> (http://alogicalparadox.com)",
+  "name": "flynn",
+  "description": "Node process management.",
+  "version": "0.0.0",
+  "main": "./index",
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+      "drip": "0.3.x"
+    , "fsagent": "0.3.x"
+  },
+  "devDependencies": {
+      "chai": "*"
+    , "mocha": "*"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
