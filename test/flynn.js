@@ -25,27 +25,10 @@ describe('Flynn', function () {
     flynn.should.have.property('version');
   });
 
-  it('can start a new process', function (done) {
-    var mon = flynn('node',
-        [ join(__dirname, 'fixtures/monitor.js'), '1' ]
-      , { restartAuto: false }
-    );
-
-    var exit = 0;
-    mon.on('exit', function (code) {
-      should.exist(code);
-      code.should.equal(1);
-      mon.state.should.equal('stopped');
-      done();
-    });
-
-    mon.start();
-  });
-
   describe('starting / stopping', function () {
     var mon = flynn('node',
         [ join(__dirname, 'fixtures/montitor.js'), '2' ]
-      , { restartAuto: false }
+      , { restart: false }
     );
 
     it('can start', function (done) {
@@ -62,7 +45,7 @@ describe('Flynn', function () {
       var pid = mon.pid;
       mon.stop(function () {
         pid.should.not.be.alive;
-        mon.state.should.equal('stopped');
+        mon.state().should.equal('stopped');
         done();
       });
     });
@@ -89,30 +72,24 @@ describe('Flynn', function () {
 
   describe('restarting', function () {
 
-    it('can restart when a process fails', function () {
+    it('can restart when a process fails', function (done) {
       var mon = flynn('node',
           [ join(__dirname, 'fixtures/monitor.js'), '1' ]
-        , { restartAuto: true
-          , restartMax: 5 }
+        , { restart: true
+          , 'restart max': 5 }
       );
 
-      var exit = 0;
-      mon.on('exit', function (code) {
-        should.exist(code);
-        exit++;
-      });
-
-      var restarted = 0;
+      var restarted = false;
       mon.on('restarting', function () {
-        restarted++;
+        restarted = true;
       });
 
-      mon.on('failure', function (err) {
-        expect(err).to.exist;
-        expect(exit).to.equal(6);
-        expect(restarted).to.equal(5);
+      mon.on('stopped', function () {
+        restarted.should.be.true;
         done();
       });
+
+      mon.start();
     });
 
   });
