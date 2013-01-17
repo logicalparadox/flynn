@@ -1,10 +1,9 @@
-.git*
 docs/
 support/
 test/
-.DS_Store
-coverage.html
-lib-cov
+examples/
+lib-cov/
 .travis.yml
+coverage.html
 Makefile
 *.swp

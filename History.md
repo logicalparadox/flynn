@@ -1,4 +1,14 @@
 
+0.2.0 / 2013-01-17 
+==================
+
+  * examples: add basic
+  * test: update tests to new api
+  * lib: update to contraption based fsm
+  * deps: change to contraption based module
+  * make: increase test timeout
+  * dependancy free
+
 0.1.0 / 2012-07-11 
 ==================
 
