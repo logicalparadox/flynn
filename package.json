@@ -12,7 +12,13 @@
   "scripts": {
     "test": "make test"
   },
-  "dependencies": {},
+  "dependencies": {
+      "contraption": "0.1.x"
+    , "facet": "0.3.x"
+    , "sherlock": "*"
+    , "tea-extend": "0.2.x"
+    , "tea-inherits": "0.1.x"
+  },
   "devDependencies": {
       "chai": "*"
     , "mocha": "*"
