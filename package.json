@@ -1,6 +1,6 @@
 {
     "name": "flynn"
-  , "version": "0.2.1"
+  , "version": "0.2.2"
   , "description": "Process monitor for node.js"
   , "author": "Jake Luer <jake@alogicalpardox.com> (http://alogicalparadox.com)"
   , "license": "MIT"
